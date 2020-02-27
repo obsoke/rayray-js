@@ -1,0 +1,18 @@
+{
+  "name": "rayray-js",
+  "version": "1.0.0",
+  "description": "Raytracer!",
+  "scripts": {
+    "dev": "parcel public/index.html",
+    "build": "parcel build public/index.html"
+  },
+  "keywords": [],
+  "author": "Obsoke <obsoke@obsoke.com>",
+  "prettier": {
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.8.2"
+  }
+}
