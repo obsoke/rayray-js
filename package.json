@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
+    "prettier": "https://github.com/prettier/prettier#61d3936b6e13238e0eb16fab3ca53d75fc942030",
     "typescript": "^3.8.2"
   }
 }

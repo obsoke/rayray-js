@@ -1,5 +1,5 @@
-export const WIDTH = 1280;
-export const HEIGHT = 720;
+export const WIDTH = 640;
+export const HEIGHT = 480;
 
 /**
  * Create the HTML canvas element, append it to the DOM & return the element.

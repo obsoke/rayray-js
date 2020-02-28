@@ -1,4 +1,5 @@
 import * as Canvas from './canvas';
+import Vec3 from './vec3';
 
 const WIDTH = Canvas.WIDTH;
 const HEIGHT = Canvas.HEIGHT;
@@ -28,13 +29,11 @@ function main(): void {
   const start = performance.now();
   for (let y = 0; y < HEIGHT; y++) {
     for (let x = 0; x < WIDTH; x++) {
-      const r = x / WIDTH;
       const actualG = HEIGHT - y; // Unlike tutorial, we aren't counting pixel we draw to + Y colour separately
-      const g = actualG / HEIGHT;
-      const b = 0.2;
-      const ir = r * 255.99;
-      const ig = g * 255.99;
-      const ib = b * 255.99;
+      const colour = new Vec3(x / WIDTH, actualG / HEIGHT, 0.2);
+      const ir = colour.r() * 255.99;
+      const ig = colour.g() * 255.99;
+      const ib = colour.b() * 255.99;
       const colourString = `rgb(${ir}, ${ig}, ${ib})`;
       draw(context, x, y, colourString);
     }
