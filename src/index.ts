@@ -23,8 +23,25 @@ function main(): void {
   const canvas = Canvas.createCanvas();
   const context = Canvas.createCanvasContext(canvas);
 
-  // Draw a single pixel
-  draw(context, 50, 50, 'rgb(51, 170, 51)');
+  console.log(`Starting to draw...`);
+
+  const start = performance.now();
+  for (let y = 0; y < HEIGHT; y++) {
+    for (let x = 0; x < WIDTH; x++) {
+      const r = x / WIDTH;
+      const actualG = HEIGHT - y; // Unlike tutorial, we aren't counting pixel we draw to + Y colour separately
+      const g = actualG / HEIGHT;
+      const b = 0.2;
+      const ir = r * 255.99;
+      const ig = g * 255.99;
+      const ib = b * 255.99;
+      const colourString = `rgb(${ir}, ${ig}, ${ib})`;
+      draw(context, x, y, colourString);
+    }
+  }
+  const end = performance.now();
+
+  console.log(`Finished drawing; took ${(end - start) / 1000}s`);
 }
 
 main();
